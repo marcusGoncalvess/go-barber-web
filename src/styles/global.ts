@@ -25,4 +25,11 @@ export default createGlobalStyle`
   button{
     cursor: pointer;
   }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: all 50000s;
+  }
 `;
