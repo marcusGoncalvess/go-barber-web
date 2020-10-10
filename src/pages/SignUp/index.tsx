@@ -34,7 +34,6 @@ const SignUp: React.FC = () => {
       // eslint-disable-next-line no-console
 
       const errors = getValidationErrors(err);
-      console.log(errors);
 
       formRef.current?.setErrors(errors);
     }
