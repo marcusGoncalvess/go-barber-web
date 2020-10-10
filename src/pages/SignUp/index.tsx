@@ -32,9 +32,9 @@ const SignUp: React.FC = () => {
       });
     } catch (err) {
       // eslint-disable-next-line no-console
-      console.log(err);
 
       const errors = getValidationErrors(err);
+      console.log(errors);
 
       formRef.current?.setErrors(errors);
     }
