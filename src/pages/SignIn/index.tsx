@@ -4,7 +4,7 @@ import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../hooks/AuthContext';
 import getValidationErrors from '../../utils/getValidationErros';
 
 import logoImg from '../../assets/logo.svg';
@@ -46,10 +46,10 @@ const SignIn: React.FC = () => {
         });
       } catch (err) {
         // eslint-disable-next-line no-console
-
-        const errors = getValidationErrors(err);
-
-        formRef.current?.setErrors(errors);
+        if (err instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(err);
+          formRef.current?.setErrors(errors);
+        }
       }
     },
     [signIn],
