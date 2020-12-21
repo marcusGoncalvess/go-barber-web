@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FiClock, FiPower } from 'react-icons/fi';
 import { useAuth } from '../../hooks/auth';
@@ -12,11 +12,14 @@ import {
   Schedule,
   NextAppointment,
   Calender,
+  Section,
+  Appointment,
 } from './styles';
 
 import logoImg from '../../assets/logo.svg';
 
 const Dashboard: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
   const { signOut, user } = useAuth();
 
   return (
@@ -64,6 +67,59 @@ const Dashboard: React.FC = () => {
               </span>
             </div>
           </NextAppointment>
+
+          <Section>
+            <strong>Manhã</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                09:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars2.githubusercontent.com/u/57052394?s=460&u=dea13ca8a9e444d334e43175f42c296cb700a6ad&v=4"
+                  alt="Marcus"
+                />
+                <strong>Marcus Gonçalves</strong>
+              </div>
+            </Appointment>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                09:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars2.githubusercontent.com/u/57052394?s=460&u=dea13ca8a9e444d334e43175f42c296cb700a6ad&v=4"
+                  alt="Marcus"
+                />
+                <strong>Marcus Gonçalves</strong>
+              </div>
+            </Appointment>
+          </Section>
+
+          <Section>
+            <strong>Tarde</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                09:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars2.githubusercontent.com/u/57052394?s=460&u=dea13ca8a9e444d334e43175f42c296cb700a6ad&v=4"
+                  alt="Marcus"
+                />
+                <strong>Marcus Gonçalves</strong>
+              </div>
+            </Appointment>
+          </Section>
         </Schedule>
 
         <Calender />
